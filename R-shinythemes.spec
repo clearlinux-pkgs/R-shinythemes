@@ -4,14 +4,21 @@
 #
 Name     : R-shinythemes
 Version  : 1.1.2
-Release  : 21
+Release  : 22
 URL      : https://cran.r-project.org/src/contrib/shinythemes_1.1.2.tar.gz
 Source0  : https://cran.r-project.org/src/contrib/shinythemes_1.1.2.tar.gz
 Summary  : Themes for Shiny
 Group    : Development/Tools
 License  : GPL-3.0
-Requires: R-shiny
+Requires: R-htmltools
+Requires: R-httpuv
+Requires: R-mime
+Requires: R-xtable
+BuildRequires : R-htmltools
+BuildRequires : R-httpuv
+BuildRequires : R-mime
 BuildRequires : R-shiny
+BuildRequires : R-xtable
 BuildRequires : buildreq-R
 
 %description
@@ -27,10 +34,10 @@ export http_proxy=http://127.0.0.1:9/
 export https_proxy=http://127.0.0.1:9/
 export no_proxy=localhost,127.0.0.1,0.0.0.0
 export LANG=C
-export SOURCE_DATE_EPOCH=1541537659
+export SOURCE_DATE_EPOCH=1552848165
 
 %install
-export SOURCE_DATE_EPOCH=1541537659
+export SOURCE_DATE_EPOCH=1552848165
 rm -rf %{buildroot}
 export LANG=C
 export CFLAGS="$CFLAGS -O3 -flto -fno-semantic-interposition "
@@ -66,8 +73,7 @@ export http_proxy=http://127.0.0.1:9/
 export https_proxy=http://127.0.0.1:9/
 export no_proxy=localhost,127.0.0.1,0.0.0.0
 export _R_CHECK_FORCE_SUGGESTS_=false
-R CMD check --no-manual --no-examples --no-codoc -l %{buildroot}/usr/lib64/R/library shinythemes|| : 
-cp ~/.stash/* %{buildroot}/usr/lib64/R/library/*/libs/ || :
+R CMD check --no-manual --no-examples --no-codoc  shinythemes || :
 
 
 %files

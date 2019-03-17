@@ -1,2 +1,6 @@
 1.1.2
+R-htmltools
+R-httpuv
+R-mime
 R-shiny
+R-xtable
