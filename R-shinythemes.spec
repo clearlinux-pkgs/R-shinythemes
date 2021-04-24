@@ -4,7 +4,7 @@
 #
 Name     : R-shinythemes
 Version  : 1.2.0
-Release  : 38
+Release  : 39
 URL      : https://cran.r-project.org/src/contrib/shinythemes_1.2.0.tar.gz
 Source0  : https://cran.r-project.org/src/contrib/shinythemes_1.2.0.tar.gz
 Summary  : Themes for Shiny
